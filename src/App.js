@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 //import * as yup from 'yup';
 
 // Design Section
@@ -56,11 +57,11 @@ function App() {
     console.log('posterURL : ', refPosterURL.current.value);
     console.log('Rating : ', refRating.current.value);
 
-    refTitle.current.value === "" ? alert("Title is empty") : newMovie.title = refTitle.current.value;
-
+    newMovie.id = uuidv4();
+    newMovie.title = refTitle.current.value;
     newMovie.description = refDescription.current.value;
     newMovie.posterURL = refPosterURL.current.value;
-    newMovie.rating = refTrailerURL.current.value;
+    newMovie.trailerURL = refTrailerURL.current.value;
     newMovie.rating = refRating.current.value;
 
     setMovies([...movies, newMovie]);
@@ -93,7 +94,7 @@ function App() {
       <FormInput refTitle={refTitle} refDescription={refDescription} refPosterURL={refPosterURL} refTrailerURL={refTrailerURL} refRating={refRating} addMovie={addMovie} />
       <Routes>
         <Route path="/" element={<MovieList seenCounter={seenCounter} unSeenCounter={unSeenCounter} setChecked={setChecked} handleChecked={handleChecked} movies={filteredMovies} />} />
-        <Route path="/MovieInformation/:id" element={<MovieInformation />} />
+        <Route path="/MovieInformation/:id" element={<MovieInformation movies={filteredMovies} />} />
       </Routes>
     </div>
   );

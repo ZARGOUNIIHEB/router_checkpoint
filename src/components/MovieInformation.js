@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Movie from "./Movie";
 import '../App.css';
 
 
-const MovieInformation = () => {
+const MovieInformation = ({ movies }) => {
+    console.log("Movies from MovieInformation", movies);
     const { id } = useParams();
-    const movieObject = Movie.find((el) => el.id === id);
+    const movieObject = movies.find((el) => el.id === id);
+    console.log("MovieObject", movieObject);
     return (
         <div className="movieInfoDiv">
             <section className="movieInfo_SectionOne">

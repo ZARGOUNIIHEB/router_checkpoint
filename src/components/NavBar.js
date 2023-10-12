@@ -14,7 +14,7 @@ const NavBar = ({ movieNumber, filterTitle, filterRating, onFilterChange }) => {
             {['xl'].map((expand) => (
                 <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
                     <Container fluid>
-                        <Link to='/' style={{ textDecoration: "none" }}><Navbar.Brand href="#"><h1 className='appTitle'>Movies{movieNumber}</h1></Navbar.Brand></Link>
+                        <Link to='/' style={{ textDecoration: "none" }}><h1 className='appTitle'>Movies{movieNumber}</h1></Link>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -27,7 +27,10 @@ const NavBar = ({ movieNumber, filterTitle, filterRating, onFilterChange }) => {
                             </Offcanvas.Header>
                             <Offcanvas.Body>
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                                    <Nav.Link href="/#action1">Home</Nav.Link>
+                                    <Link to='/' style={{ textDecoration: "none" }}><h1 className='navHome'>Home</h1></Link>
+                                    <Link to='/' style={{ textDecoration: "none" }}><h1 className='navTvShows'>TV Shows</h1></Link>
+                                    <Link to='/' style={{ textDecoration: "none" }}><h1 className='navMovies'>Movies</h1></Link>
+                                    <Link to='/' style={{ textDecoration: "none" }}><h1 className='navLatest'>Latest</h1></Link>
                                 </Nav>
                                 <Form className="d-flex">
                                     <Form.Control
@@ -50,8 +53,8 @@ const NavBar = ({ movieNumber, filterTitle, filterRating, onFilterChange }) => {
                                 </Form>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
-                    </Container>
-                </Navbar>
+                    </Container >
+                </Navbar >
             ))}
         </>
     );

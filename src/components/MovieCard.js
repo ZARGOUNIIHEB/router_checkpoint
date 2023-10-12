@@ -15,7 +15,7 @@ const MovieCard = ({ movie, handleChecked }) => {
 
         <Card border="secondary" style={{ width: '18rem', margin: '10px' }} >
             <Card.Img className='EyeIcon' variant="top" onClick={() => setGetChecked(movie.checked = !movie.checked)} src={movie.checked ? blueLogo : grayLogo} />
-            <Link to={`/MovieInformation/${movie.id}`}><Card.Img variant="top" src={movie.posterURL} /></Link>
+            <Link to={`/MovieInformation/${movie.id}`}><Card.Img variant="top" src={movie.posterURL} onClick={() => setGetChecked(movie.checked = !movie.checked)} /></Link>
             <Card.Body>
                 <Card.Title style={{ fontFamily: "fantasy", fontSize: 20, fontStyle: "oblique" }}>{movie.title}</Card.Title>
                 <Card.Text style={{ fontFamily: "cursive", fontSize: 17 }}>{movie.description}
