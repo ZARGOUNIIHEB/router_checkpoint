@@ -56,9 +56,11 @@ function App() {
     console.log('posterURL : ', refPosterURL.current.value);
     console.log('Rating : ', refRating.current.value);
 
-    newMovie.title = refTitle.current.value;
+    refTitle.current.value === "" ? alert("Title is empty") : newMovie.title = refTitle.current.value;
+
     newMovie.description = refDescription.current.value;
     newMovie.posterURL = refPosterURL.current.value;
+    newMovie.rating = refTrailerURL.current.value;
     newMovie.rating = refRating.current.value;
 
     setMovies([...movies, newMovie]);
