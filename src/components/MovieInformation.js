@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import '../App.css';
+import './MovieInformation.css';
 
 
 const MovieInformation = ({ movies }) => {
-    console.log("Movies from MovieInformation", movies);
     const { id } = useParams();
     const movieObject = movies.find((el) => el.id === id);
     console.log("MovieObject", movieObject);
@@ -18,6 +17,7 @@ const MovieInformation = ({ movies }) => {
                 </iframe>
             </section>
             <section className="movieInfo_SectionTwo">
+                <div className='shaperDiv'></div>
                 <div className='firstUnder'>
                     <img className="imgPoster" src={movieObject.posterURL}></img>
                 </div>
@@ -26,8 +26,12 @@ const MovieInformation = ({ movies }) => {
                     <p>{movieObject.description}</p>
                     <label>{movieObject.rating}</label>
                 </div>
+
             </section>
         </div >
+
     );
 }
 export default MovieInformation;
+
+

@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //Import Components Section
 import Movie from './components/Movie';
 import MovieList from './components/MovieList';
-import Filter from './components/Filter';
+
 import FormInput from './components/formInput';
 import NavBar from './components/NavBar';
 import MovieInformation from './components/MovieInformation';
@@ -29,6 +29,8 @@ function App() {
   const refPosterURL = useRef();
   const refTrailerURL = useRef();
   const refRating = useRef();
+
+  console.log("Movie List :", movies);
 
   // const userSchema = yup.object().shape({
 

@@ -12,7 +12,6 @@ const MovieCard = ({ movie, handleChecked }) => {
     handleChecked(movie.id, getChecked);
 
     return (
-
         <Card border="secondary" style={{ width: '18rem', margin: '10px' }} >
             <Card.Img className='EyeIcon' variant="top" onClick={() => setGetChecked(movie.checked = !movie.checked)} src={movie.checked ? blueLogo : grayLogo} />
             <Link to={`/MovieInformation/${movie.id}`}><Card.Img variant="top" src={movie.posterURL} onClick={() => setGetChecked(movie.checked = !movie.checked)} /></Link>
